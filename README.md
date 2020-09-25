@@ -6,3 +6,4 @@ Uses:
 
 - Gatsby.js
 - Emotion CSS
+- GraphQL
