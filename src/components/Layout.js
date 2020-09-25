@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
-import Header from './Header'
+import Header from './header'
 import useSiteMetaData from '../hooks/use-sitemetadata'
 
 const Layout = ({ children }) => {
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
             margin: 0;
             font-family: 'Courier Prime', monospace;
             font-size: 1.2rem;
-            line-height: 1.5;
+            line-height: 1.2;
             color: #555;
           }
 
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
           h4,
           h5,
           h6 {
-            line-height: 1.1;
+            line-height: 1;
             color: #222;
 
             + * {
