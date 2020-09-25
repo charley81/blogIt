@@ -35,7 +35,7 @@ const Header = () => (
       }
     `}
   >
-    <NavLink to='/' fontweight='bold'>
+    <NavLink to='/' fontWeight='bold'>
       blogIt
     </NavLink>
     <nav>
