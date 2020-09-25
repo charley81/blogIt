@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import Layout from '../components/layout'
 import ReadLink from '../components/read-link'
 
-const PostTemplate = () => (
+const PostTemplate = ({ pageContext }) => (
   <Layout>
     <h1>post title</h1>
     <p
@@ -14,6 +14,7 @@ const PostTemplate = () => (
     >
       Posted by (author)
     </p>
+    <pre>{JSON.stringify(pageContext)}</pre>
     <p>Post body goes here</p>
     <ReadLink to='/'>&larr; back to all posts</ReadLink>
   </Layout>
