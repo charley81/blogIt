@@ -1,66 +1,77 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
-import Header from './Header'
+import Header from './header'
+import useSiteMetaData from '../hooks/use-sitemetadata'
 
-const Layout = ({ children }) => (
-  <>
-    <Global
-      styles={css`
-        box-sizing: border-box;
-        margin: 0;
+const Layout = ({ children }) => {
+  const { title, description } = useSiteMetaData()
 
-        * + * {
-          margin-top: 1rem;
-        }
-
-        html,
-        body {
+  return (
+    <>
+      <Global
+        styles={css`
+          box-sizing: border-box;
           margin: 0;
-          font-family: 'Courier Prime', monospace;
-          font-size: 1.2rem;
-          line-height: 1.5;
-          color: #555;
-        }
 
-        /* remove margin for main div that gatsby mounts into */
-        > div {
-          margin-top: 0;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          line-height: 1.1;
-          color: #222;
-
-          + * {
-            margin-top: 0.5rem;
+          * + * {
+            margin-top: 1rem;
           }
-        }
 
-        strong {
-          color: #222;
-        }
+          html,
+          body {
+            margin: 0;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            color: #555;
+          }
 
-        li {
-          margin-top: 0.25rem;
-        }
-      `}
-    />
-    <Header />
-    <main
-      css={css`
-        margin: 2rem auto 4rem;
-        max-width: 90vw;
-        width: 550px;
-      `}
-    >
-      {children}
-    </main>
-  </>
-)
+          /* remove margin for main div that gatsby mounts into */
+          > div {
+            margin-top: 0;
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            line-height: 1;
+            color: #222;
+
+            + * {
+              margin-top: 0.5rem;
+            }
+          }
+
+          strong {
+            color: #222;
+          }
+
+          li {
+            margin-top: 0.25rem;
+          }
+        `}
+      />
+      <Helmet>
+        <html lang='en' />
+        <title>{title}</title>
+        <meta name='description' content={description} />
+      </Helmet>
+      <Header />
+      <main
+        css={css`
+          margin: 2rem auto 4rem;
+          max-width: 90vw;
+          width: 550px;
+        `}
+      >
+        {children}
+      </main>
+    </>
+  )
+}
 
 export default Layout

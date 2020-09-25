@@ -6,5 +6,27 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ['gatsby-plugin-emotion'],
+  siteMetadata: {
+    title: 'blogIt',
+    description: 'A personal blog platform',
+  },
+  plugins: [
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout.js'),
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: 'posts',
+      },
+    },
+  ],
 }
