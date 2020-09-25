@@ -39,8 +39,26 @@ const Layout = ({ children }) => (
             margin-top: 0.5rem;
           }
         }
+
+        strong {
+          color: #222;
+        }
+
+        li {
+          margin-top: 0.25rem;
+        }
       `}
     />
+    <header />
+    <main
+      css={css`
+        margin: 2rem auto 4rem;
+        max-width: 90vw;
+        width: 550px;
+      `}
+    >
+      {children}
+    </main>
   </>
 )
 
