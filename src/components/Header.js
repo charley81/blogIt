@@ -29,6 +29,7 @@ const Header = () => (
       padding: 0.5rem calc((100vw - 550px) / 2);
       height: 50px;
       align-items: center;
+      margin: 0;
 
       nav {
         margin: 0;
